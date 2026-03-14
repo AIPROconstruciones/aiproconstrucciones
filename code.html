@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI PRO Construcciones | Ingeniería Civil, Arquitectura y Construcción de Lujo</title>
+<meta content="Expertos en ingeniería civil, arquitectura, construcción de casas y proyectos de infraestructura. Realizamos estudios de suelo, sistemas de riego y alcantarillado con calidad garantizada." name="description"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter & Montserrat -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Montserrat:wght@700;800;900&amp;display=swap" rel="stylesheet"/>
+<!-- FontAwesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        /* Navy, Charcoal & Silver/Bronze Palette */
+        .bg-navy { background-color: #0f172a; }
+        .text-navy { color: #0f172a; }
+        .border-navy { border-color: #0f172a; }
+        
+        .bg-bronze { background-color: #92704e; }
+        .text-bronze { color: #92704e; }
+        .border-bronze { border-color: #92704e; }
+        
+        .bg-silver { background-color: #cbd5e1; }
+        .text-silver { color: #94a3b8; }
+
+        .hero-pattern {
+            background-color: #0f172a;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+        }
+
+        .hover-lift {
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .hover-lift:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 60px rgba(15, 23, 42, 0.1);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+
+        .text-gradient-navy {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-bronze {
+            background: linear-gradient(135deg, #92704e 0%, #b59070 50%, #725235 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            DEFAULT: '#0f172a',
+                            light: '#1e293b',
+                            dark: '#020617',
+                        },
+                        charcoal: {
+                            DEFAULT: '#334155',
+                            light: '#475569',
+                            dark: '#1e293b',
+                        },
+                        bronze: {
+                            DEFAULT: '#92704e',
+                            light: '#b59070',
+                            dark: '#725235',
+                        },
+                        silver: {
+                            DEFAULT: '#cbd5e1',
+                            accent: '#94a3b8'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="text-slate-700 antialiased overflow-x-hidden bg-slate-50">
+<!-- BEGIN: MainHeader -->
+<header class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-white/90 backdrop-blur-2xl border-b border-slate-200">
+<nav class="max-w-7xl mx-auto px-6 lg:px-8 h-24 flex items-center justify-between">
+<div class="flex items-center space-x-4 group cursor-pointer">
+<div class="w-12 h-12 bg-navy flex items-center justify-center rounded-xl shadow-lg group-hover:scale-110 transition-all duration-500 transform group-hover:rotate-6">
+<span class="text-white font-black text-2xl tracking-tighter">AI</span>
+</div>
+<span class="font-black text-2xl tracking-tight text-navy uppercase">PRO <span class="font-light text-bronze">Construcciones</span></span>
+</div>
+<!-- Desktop Nav -->
+<div class="hidden md:flex items-center space-x-12">
+<a class="text-xs font-black uppercase tracking-[0.2em] text-slate-500 hover:text-navy transition-colors relative" href="#home">Inicio</a>
+<a class="text-xs font-black uppercase tracking-[0.2em] text-slate-500 hover:text-navy transition-colors relative" href="#nosotros">Nosotros</a>
+<a class="text-xs font-black uppercase tracking-[0.2em] text-slate-500 hover:text-navy transition-colors relative" href="#servicios">Servicios</a>
+<a class="text-xs font-black uppercase tracking-[0.2em] text-slate-500 hover:text-navy transition-colors relative" href="#proyectos">Proyectos</a>
+<a class="text-xs font-black uppercase tracking-[0.2em] text-slate-500 hover:text-navy transition-colors relative" href="#contacto">Contacto</a>
+</div>
+<div class="hidden md:block">
+<a class="bg-navy text-white px-8 py-4 rounded-full text-[10px] font-black uppercase tracking-[0.25em] hover:bg-bronze hover:shadow-xl hover:-translate-y-1 transition-all duration-500" href="#cotizacion-gratis">Solicitar Cotización</a>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-navy p-2">
+<svg class="h-8 w-8" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 8h16M4 16h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+</button>
+</nav>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: HeroSection -->
+<section class="relative min-h-screen flex items-center pt-24 overflow-hidden hero-pattern" id="home">
+<div class="absolute inset-0 z-0">
+<img alt="Modern clean architectural masterpiece" class="w-full h-full object-cover scale-105 opacity-40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD63mw48jx_a8Ue7EPQi0xp8fpa8y4S-lbZtzf5X68acoYePc7vD4wkuEWzVHU0sMhuInQWvxHSpRvpGKISljbXxaFT8qPppOZCNpFzzlRD0H6BeDkDvgjIkq5UHywBRc6PyrylN619-ZStj1UGhewyrkiVNIKDelQgShqb7bTCvW-Z831JtsFASMej-bOMm59SbsSb8XCE4oJxV-ON_avk5iwHbEgBduc2HsYrE5-Swx1ZZQk6evs0mRMx-Ct_zj8KbtJUpTckoLbP"/>
+<div class="absolute inset-0 bg-gradient-to-r from-navy via-navy/60 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-32">
+<div class="max-w-4xl">
+<div class="inline-flex items-center space-x-3 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-10">
+<span class="w-2.5 h-2.5 bg-bronze rounded-full animate-ping"></span>
+<span class="text-[10px] font-black text-white uppercase tracking-[0.3em]">Ingeniería de Clase Mundial</span>
+</div>
+<h1 class="text-6xl md:text-8xl font-black text-white leading-[1.05] mb-10 tracking-tighter">Construya con la excelencia <br/><span class="text-gradient-bronze">que su visión merece.</span></h1>
+<p class="text-xl md:text-2xl text-slate-300 mb-14 leading-relaxed max-w-2xl font-light">
+                Soluciones integrales que garantizan calidad, seguridad y eficiencia en grandes proyectos de vivienda personalizada de alto nivel.
+            </p>
+<div class="flex flex-col sm:flex-row items-center gap-6">
+<a class="w-full sm:w-auto px-12 py-6 bg-white text-navy font-black rounded-full shadow-2xl hover:scale-105 hover:bg-slate-100 transition-all duration-500 text-center uppercase tracking-[0.2em] text-[11px]" href="#cotizacion-gratis">Solicitar Cotización Gratis</a>
+<a class="w-full sm:w-auto px-12 py-6 bg-navy-light/40 backdrop-blur-md border border-white/10 text-white font-black rounded-full hover:bg-navy-light/60 transition-all duration-500 text-center flex items-center justify-center uppercase tracking-[0.2em] text-[11px]" href="https://wa.me/593987189520?text=Hola,%20estoy%20interesado%20en%20los%20servicios%20de%20AI%20PRO%20Construcciones,%20me%20gustaría%20recibir%20información.">
+<i class="fab fa-whatsapp mr-3 text-xl text-green-400"></i> Hablemos de tu proyecto
+                </a>
+</div>
+</div>
+</div>
+<!-- Decorative indicator -->
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce hidden lg:block">
+<div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-2">
+<div class="w-1 h-2 bg-bronze rounded-full"></div>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: LeadGenFormSection -->
+<section class="py-32 bg-slate-50" id="cotizacion-gratis">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="bg-white rounded-[3rem] shadow-[0_50px_100px_-20px_rgba(15,23,42,0.1)] overflow-hidden grid lg:grid-cols-12 border border-slate-200">
+<div class="lg:col-span-5 p-12 lg:p-20 text-white flex flex-col justify-center relative bg-navy">
+<div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-bronze/10 rounded-full blur-[100px]"></div>
+<h2 class="text-5xl font-black mb-10 leading-tight">Solicita tu Cotización <span class="text-bronze">Gratis</span></h2>
+<p class="text-slate-400 mb-12 text-lg leading-relaxed font-light">Nuestro equipo técnico evaluará sus requerimientos para entregarle un presupuesto detallado y profesional que garantice el éxito de su inversión.</p>
+<div class="space-y-8">
+<div class="flex items-start space-x-5">
+<div class="mt-1 w-10 h-10 bg-white/5 border border-white/10 text-bronze flex items-center justify-center rounded-xl font-bold">01</div>
+<div>
+<h4 class="font-black text-sm uppercase tracking-wider mb-1">Asesoría Especializada</h4>
+<p class="text-slate-500 text-sm">Consultoría técnica de primer nivel.</p>
+</div>
+</div>
+<div class="flex items-start space-x-5">
+<div class="mt-1 w-10 h-10 bg-white/5 border border-white/10 text-bronze flex items-center justify-center rounded-xl font-bold">02</div>
+<div>
+<h4 class="font-black text-sm uppercase tracking-wider mb-1">Presupuestos Detallados</h4>
+<p class="text-slate-500 text-sm">Transparencia total en costos y tiempos.</p>
+</div>
+</div>
+<div class="flex items-start space-x-5">
+<div class="mt-1 w-10 h-10 bg-white/5 border border-white/10 text-bronze flex items-center justify-center rounded-xl font-bold">03</div>
+<div>
+<h4 class="font-black text-sm uppercase tracking-wider mb-1">Visita Técnica</h4>
+<p class="text-slate-500 text-sm">Inspección de campo programada.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 p-12 lg:p-20 bg-white">
+<form class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<div class="space-y-3">
+<label class="block text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">Nombre Completo</label>
+<input class="w-full bg-slate-50 border-0 border-b-2 border-slate-200 focus:ring-0 focus:border-navy p-4 transition-all outline-none text-navy" placeholder="Juan Pérez" required="" type="text"/>
+</div>
+<div class="space-y-3">
+<label class="block text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">Teléfono de Contacto</label>
+<input class="w-full bg-slate-50 border-0 border-b-2 border-slate-200 focus:ring-0 focus:border-navy p-4 transition-all outline-none text-navy" placeholder="+593 987189520" required="" type="tel"/>
+</div>
+<div class="space-y-3">
+<label class="block text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">Tipo de Proyecto</label>
+<select class="w-full bg-slate-50 border-0 border-b-2 border-slate-200 focus:ring-0 focus:border-navy p-4 transition-all outline-none appearance-none cursor-pointer text-navy">
+<option>Construcción de Casa Premium</option>
+<option>Arquitectura Comercial</option>
+<option>Ingeniería de Infraestructura</option>
+<option>Consultoría Geotécnica</option>
+</select>
+</div>
+<div class="space-y-3">
+<label class="block text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">Ciudad / Ubicación</label>
+<input class="w-full bg-slate-50 border-0 border-b-2 border-slate-200 focus:ring-0 focus:border-navy p-4 transition-all outline-none text-navy" placeholder="Ej. Quito, Ecuador" required="" type="text"/>
+</div>
+<div class="md:col-span-2 space-y-3">
+<label class="block text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">Mensaje / Detalles Adicionales</label>
+<textarea class="w-full bg-slate-50 border-0 border-b-2 border-slate-200 focus:ring-0 focus:border-navy p-4 transition-all outline-none text-navy" placeholder="Describa su visión y objetivos específicos..." rows="4"></textarea>
+</div>
+<div class="md:col-span-2 pt-6">
+<button class="w-full py-6 bg-navy text-white font-black rounded-2xl hover:bg-bronze hover:shadow-2xl transition-all duration-500 uppercase tracking-[0.25em] text-[11px]" type="submit">Enviar Solicitud de Cotización</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- END: LeadGenFormSection -->
+<!-- BEGIN: AboutSection -->
+<section class="py-32 bg-white" id="nosotros">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="grid lg:grid-cols-2 gap-32 items-center">
+<div class="space-y-10 reveal">
+<div class="space-y-6">
+<span class="text-bronze font-black tracking-[0.4em] uppercase text-[10px] block">Nuestra Trayectoria</span>
+<h2 class="text-5xl md:text-6xl font-black text-navy leading-[1.1] tracking-tight">Excelencia en cada estructura, compromiso en el detalle.</h2>
+</div>
+<p class="text-xl text-slate-500 leading-relaxed font-light">
+                    Somos una firma líder dedicada a transformar ideas en realidades tangibles de alto impacto. Fusionamos innovación arquitectónica con una ingeniería de precisión absoluta.
+                </p>
+<div class="grid md:grid-cols-2 gap-12">
+<div class="space-y-5">
+<div class="w-12 h-12 bg-navy/5 rounded-2xl flex items-center justify-center text-navy border border-navy/10">
+<i class="fas fa-eye text-xl"></i>
+</div>
+<h3 class="font-black text-navy uppercase tracking-widest text-[11px]">Nuestra Visión</h3>
+<p class="text-sm text-slate-500 leading-relaxed">Referente global en soluciones de ingeniería premium, reconocidos por nuestra innovación y estándares de lujo sostenible.</p>
+</div>
+<div class="space-y-5">
+<div class="w-12 h-12 bg-navy/5 rounded-2xl flex items-center justify-center text-navy border border-navy/10">
+<i class="fas fa-bullseye text-xl"></i>
+</div>
+<h3 class="font-black text-navy uppercase tracking-widest text-[11px]">Nuestra Misión</h3>
+<p class="text-sm text-slate-500 leading-relaxed">Entregar proyectos que superen las expectativas de calidad, impulsando el desarrollo urbano con integridad y elegancia.</p>
+</div>
+</div>
+<div class="pt-10 border-t border-slate-100">
+<div class="flex flex-wrap gap-5">
+<div class="flex items-center space-x-2 px-6 py-3 bg-slate-50 text-navy text-[10px] font-black uppercase tracking-widest rounded-full border border-slate-200">
+<span class="w-1.5 h-1.5 bg-bronze rounded-full"></span>
+<span>Profesionalismo</span>
+</div>
+<div class="flex items-center space-x-2 px-6 py-3 bg-slate-50 text-navy text-[10px] font-black uppercase tracking-widest rounded-full border border-slate-200">
+<span class="w-1.5 h-1.5 bg-bronze rounded-full"></span>
+<span>Calidad Total</span>
+</div>
+<div class="flex items-center space-x-2 px-6 py-3 bg-slate-50 text-navy text-[10px] font-black uppercase tracking-widest rounded-full border border-slate-200">
+<span class="w-1.5 h-1.5 bg-bronze rounded-full"></span>
+<span>Innovación</span>
+</div>
+</div>
+</div>
+</div>
+<div class="relative reveal">
+<div class="relative z-10 overflow-hidden rounded-[3rem] shadow-[0_50px_100px_-20px_rgba(15,23,42,0.15)] aspect-[4/5]">
+<img alt="High-end modern architectural detail" class="w-full h-full object-cover transition-all duration-1000 hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9bVofLMg-KnDBXdO17TqWXu2sSMsk18ePO_0lr9zCE0IB8KmnmH2PDoAqFk1bqCIRLZuiOR8BBuPmny9ZtwVNtO3hHnXnxv7Spum3pjmm1yii3KumR3hS9jTDG09TjnQFMN_nKuxPt0hWicLY6evaw2p8xll61cr0LTYfcuftQm8rSPQuhcqLXJV4APpDdX3REM_hhSyLppI4dmArxNfrpgNqbMs9kXKh9YMXdlUsccm3VWSnbOiYRvKptWS6bqejnXZgmpHPEQpV"/>
+<div class="absolute inset-0 bg-navy/10 hover:bg-transparent transition-all duration-500"></div>
+</div>
+<div class="absolute -bottom-12 -left-12 w-80 h-80 bg-slate-100 -z-10 rounded-[4rem] opacity-70"></div>
+<div class="absolute -top-12 -right-12 w-48 h-48 bg-navy/5 -z-10 rounded-full blur-3xl"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: AboutSection -->
+<!-- BEGIN: ServicesSection -->
+<section class="py-32 bg-slate-50" id="servicios">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="text-center max-w-3xl mx-auto mb-24 reveal">
+<span class="text-bronze font-black tracking-[0.4em] uppercase text-[10px]">Portafolio de Excelencia</span>
+<h2 class="text-5xl md:text-6xl font-black text-navy mt-6 leading-[1.1] tracking-tight">Soluciones Integrales para Proyectos de Alto Nivel</h2>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+<!-- Service Cards -->
+<div class="bg-white p-12 rounded-[2.5rem] shadow-sm hover-lift group border border-slate-100">
+<div class="w-16 h-16 bg-navy/5 text-navy flex items-center justify-center rounded-2xl mb-10 group-hover:bg-navy group-hover:text-white transition-all duration-500">
+<i class="fas fa-hard-hat text-2xl"></i>
+</div>
+<h3 class="text-lg font-black text-navy mb-5 uppercase tracking-wider">Ingeniería Civil</h3>
+<p class="text-sm text-slate-500 leading-relaxed font-light">Planificación técnica y ejecución con estándares de calidad global.</p>
+</div>
+<div class="bg-white p-12 rounded-[2.5rem] shadow-sm hover-lift group border border-slate-100">
+<div class="w-16 h-16 bg-navy/5 text-navy flex items-center justify-center rounded-2xl mb-10 group-hover:bg-navy group-hover:text-white transition-all duration-500">
+<i class="fas fa-pencil-ruler text-2xl"></i>
+</div>
+<h3 class="text-lg font-black text-navy mb-5 uppercase tracking-wider">Arquitectura</h3>
+<p class="text-sm text-slate-500 leading-relaxed font-light">Diseño estético y funcional que redefine el concepto de lujo.</p>
+</div>
+<div class="bg-white p-12 rounded-[2.5rem] shadow-sm hover-lift group border border-slate-100">
+<div class="w-16 h-16 bg-navy/5 text-navy flex items-center justify-center rounded-2xl mb-10 group-hover:bg-navy group-hover:text-white transition-all duration-500">
+<i class="fas fa-building text-2xl"></i>
+</div>
+<h3 class="text-lg font-black text-navy mb-5 uppercase tracking-wider">Construcción</h3>
+<p class="text-sm text-slate-500 leading-relaxed font-light">Especialistas en viviendas premium y complejos residenciales exclusivos.</p>
+</div>
+<div class="bg-white p-12 rounded-[2.5rem] shadow-sm hover-lift group border border-slate-100">
+<div class="w-16 h-16 bg-navy/5 text-navy flex items-center justify-center rounded-2xl mb-10 group-hover:bg-navy group-hover:text-white transition-all duration-500">
+<i class="fas fa-mountain text-2xl"></i>
+</div>
+<h3 class="text-lg font-black text-navy mb-5 uppercase tracking-wider">Estudios de Suelo</h3>
+<p class="text-sm text-slate-500 leading-relaxed font-light">Análisis geotécnico avanzado para cimentaciones inquebrantables.</p>
+</div>
+</div>
+<div class="mt-24 flex flex-col sm:flex-row justify-center items-center gap-10 reveal">
+<a class="w-full sm:w-auto px-14 py-6 bg-navy text-white font-black rounded-full hover:bg-bronze shadow-xl transition-all uppercase tracking-[0.2em] text-[11px]" href="#cotizacion-gratis">Inicia tu proyecto hoy</a>
+<a class="w-full sm:w-auto px-14 py-6 bg-transparent border border-navy/20 text-navy font-black rounded-full hover:bg-navy/5 transition-all flex items-center justify-center uppercase tracking-[0.2em] text-[11px]" href="https://wa.me/593987189520?text=Hola,%20estoy%20interesado%20en%20los%20servicios%20de%20AI%20PRO%20Construcciones,%20me%20gustaría%20recibir%20información.">
+<i class="fab fa-whatsapp mr-3 text-2xl text-green-500"></i> Soporte VIP WhatsApp
+            </a>
+</div>
+</div>
+</section>
+<!-- END: ServicesSection -->
+<!-- BEGIN: ProjectsSection -->
+<section class="py-32 bg-white" id="proyectos">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-24 reveal">
+<div class="max-w-2xl">
+<span class="text-bronze font-black tracking-[0.4em] uppercase text-[10px]">Hitos de Ingeniería</span>
+<h2 class="text-5xl md:text-6xl font-black text-navy mt-6 tracking-tight">Nuestra Trayectoria en Obras de Gran Impacto</h2>
+</div>
+<div class="mt-12 md:mt-0">
+<a class="group text-navy font-black flex items-center space-x-3 transition-all hover:text-bronze uppercase tracking-[0.2em] text-[11px]" href="#">
+<span>Ver Galería Completa</span>
+<i class="fas fa-arrow-right group-hover:translate-x-3 transition-transform"></i>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Project Item 1: Luxury Apartment Interior -->
+<div class="group relative overflow-hidden rounded-[3rem] aspect-[3/4] reveal shadow-[0_30px_60px_rgba(15,23,42,0.1)] border border-slate-100">
+<img alt="Luxury modern living room interior design" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlOLT-H8yjvBEqX2jZ-27YMVt-a5oMdJRuhcZAmXtqpOYnw2xo1qgcuQac-zGb-5ixHxhCeJMH1tw_18sGUgwM7YqXvh7PqumTOns32Wkyg2qswnTkGmRqrgI9LQFji0yMA9-xYGmNgoGe97MzrvbDN46NdVELXMnEU6k1yhRGO71GBdysg1MaaY0mdOHaUnBsZx2pJkfI5_nlL3KLn1rcB0LgarzLPIRCUr7gc-1fPHerjv0Iv4bZ73ovXzMHhCU-aKOoGhDkn7_y"/>
+<div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/20 to-transparent opacity-80 group-hover:opacity-90 transition-all"></div>
+<div class="absolute bottom-0 left-0 p-12 w-full transform translate-y-6 group-hover:translate-y-0 transition-all duration-700">
+<span class="text-white/60 text-[10px] font-black uppercase tracking-[0.3em] mb-4 block">Interiores de Lujo</span>
+<h4 class="text-white font-black text-3xl leading-tight">Penthouse Aurora</h4>
+<p class="text-slate-300 text-sm mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-700 font-light max-w-xs">Espacios minimalistas diseñados para el confort y la elegancia contemporánea.</p>
+</div>
+</div>
+<!-- Project Item 2: Modern House Exterior -->
+<div class="group relative overflow-hidden rounded-[3rem] aspect-[3/4] reveal shadow-[0_30px_60px_rgba(15,23,42,0.1)] border border-slate-100" style="transition-delay: 200ms;">
+<img alt="Modern contemporary house architecture and landscaping" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGmIxeWwdiVe5zgTnMtfdKqPEm9JKtBECJZxw130B0dEl6_Z8uMdoeoQwECh2pA5axiwBTJVxo_L555NwX491w6xRf4uwqMDOKRjROJcpvsNIt4h0T0dRndK_GtlyhZEQDxmGInlZTlxkarrqNiBQM1WGCYo5u2Uft65yPfGWU2o2dIYd0tSj0u7uachzUU3d1mm4uAB5uVmv_a3z9AV1QlOhlr7XJaRsWEH8YWFHMEEDl8U6Hp9aIqt_Mr0kk6pP2DYVn2TwFG009"/>
+<div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/20 to-transparent opacity-80 group-hover:opacity-90 transition-all"></div>
+<div class="absolute bottom-0 left-0 p-12 w-full transform translate-y-6 group-hover:translate-y-0 transition-all duration-700">
+<span class="text-white/60 text-[10px] font-black uppercase tracking-[0.3em] mb-4 block">Arquitectura Residencial</span>
+<h4 class="text-white font-black text-3xl leading-tight">Villa Horizonte</h4>
+<p class="text-slate-300 text-sm mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-700 font-light max-w-xs">Residencia unifamiliar que integra materiales nobles con el paisaje natural.</p>
+</div>
+</div>
+<!-- Project Item 3: Stylish 10-story building -->
+<div class="group relative overflow-hidden rounded-[3rem] aspect-[3/4] reveal shadow-[0_30px_60px_rgba(15,23,42,0.1)] border border-slate-100" style="transition-delay: 400ms;">
+<img alt="Ingeniería de infraestructura vial y puentes a gran escala" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHcySVNNk-fhrvKltgwRrsXo-OQMICYXacX_5AQ-HKdv_OX90XM0iHs77lSyE-XKTeC5Hl8dFG_78PeQ9dyVijxJ5bSsotzqJNWhoXwLv_mtESNFI_22rJ-0pxnibi4IcbqysbvxFQSXYbyKR9ZW4N8RzsyKrxVsbUJ5cefJcGGIQoKeHmydEzJt1fQuUiwEcIEKvj91MS44G5ok7Yj-D3eRQQsFfEKluCXJ4YRb3lIKxv9hWpV7XI0MBOkrSyshq4ieMV_z8KGgSc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/20 to-transparent opacity-80 group-hover:opacity-90 transition-all"></div>
+<div class="absolute bottom-0 left-0 p-12 w-full transform translate-y-6 group-hover:translate-y-0 transition-all duration-700">
+<span class="text-white/60 text-[10px] font-black uppercase tracking-[0.3em] mb-4 block">Desarrollo Urbano</span>
+<h4 class="text-white font-black text-3xl leading-tight">Infraestructura Vial</h4>
+<p class="text-slate-300 text-sm mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-700 font-light max-w-xs">Desarrollo de complejos sistemas de transporte y conectividad urbana con ingeniería de vanguardia.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ProjectsSection -->
+<!-- BEGIN: TestimonialsSection -->
+<section class="py-32 bg-navy overflow-hidden relative" id="testimonios">
+<div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-bronze/30 to-transparent"></div>
+<div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+<div class="text-center max-w-2xl mx-auto mb-24 reveal">
+<span class="text-bronze font-black tracking-[0.4em] uppercase text-[10px]">Feedback de Clientes</span>
+<h2 class="text-4xl md:text-5xl font-black text-white mt-6 tracking-tight">La Confianza es Nuestra Mayor Obra</h2>
+</div>
+<div class="grid md:grid-cols-3 gap-12">
+<!-- Testimonial 1 -->
+<div class="bg-white/5 backdrop-blur-md p-14 rounded-[3rem] border border-white/10 relative reveal">
+<div class="absolute -top-7 left-14 w-14 h-14 bg-white text-navy rounded-2xl flex items-center justify-center text-2xl shadow-xl">
+<i class="fas fa-quote-left"></i>
+</div>
+<p class="text-slate-300 italic mb-10 font-light leading-loose text-base">"Excelencia profesional absoluta. Su ejecución en nuestra sede corporativa superó cualquier expectativa en tiempos y acabados de lujo."</p>
+<div class="flex items-center">
+<div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mr-5 text-white font-black text-sm border border-white/20">RC</div>
+<div>
+<h4 class="font-black text-white text-sm uppercase tracking-wide">Ricardo Cortés</h4>
+<p class="text-[10px] text-bronze uppercase tracking-[0.2em] font-black">CEO Grupo Innova</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-white/5 backdrop-blur-md p-14 rounded-[3rem] border border-white/10 relative reveal" style="transition-delay: 200ms;">
+<div class="absolute -top-7 left-14 w-14 h-14 bg-white text-navy rounded-2xl flex items-center justify-center text-2xl shadow-xl">
+<i class="fas fa-quote-left"></i>
+</div>
+<p class="text-slate-300 italic mb-10 font-light leading-loose text-base">"Contratamos sus servicios de ingeniería para un desarrollo residencial de alta gama y la precisión técnica fue impecable. Inmejorable."</p>
+<div class="flex items-center">
+<div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mr-5 text-white font-black text-sm border border-white/20">MG</div>
+<div>
+<h4 class="font-black text-white text-sm uppercase tracking-wide">Martha Gómez</h4>
+<p class="text-[10px] text-bronze uppercase tracking-[0.2em] font-black">Directora Inmobiliaria</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-white/5 backdrop-blur-md p-14 rounded-[3rem] border border-white/10 relative reveal" style="transition-delay: 400ms;">
+<div class="absolute -top-7 left-14 w-14 h-14 bg-white text-navy rounded-2xl flex items-center justify-center text-2xl shadow-xl">
+<i class="fas fa-quote-left"></i>
+</div>
+<p class="text-slate-300 italic mb-10 font-light leading-loose text-base">"Su capacidad para integrar sistemas complejos en diseños estéticos es asombrosa. Un socio estratégico para cualquier obra premium."</p>
+<div class="flex items-center">
+<div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mr-5 text-white font-black text-sm border border-white/20">AL</div>
+<div>
+<h4 class="font-black text-white text-sm uppercase tracking-wide">Andrés Londoño</h4>
+<p class="text-[10px] text-bronze uppercase tracking-[0.2em] font-black">Inversionista Privado</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: TestimonialsSection -->
+<!-- BEGIN: ContactSection -->
+<section class="py-32 bg-slate-50" id="contacto">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="grid lg:grid-cols-2 gap-24">
+<div class="reveal">
+<span class="text-bronze font-black tracking-[0.4em] uppercase text-[10px]">Conexión Inmediata</span>
+<h2 class="text-5xl font-black text-navy mt-6 mb-12 tracking-tight">Hablemos sobre su próximo desafío estructural.</h2>
+<div class="space-y-12">
+<div class="flex items-center space-x-8">
+<div class="w-16 h-16 bg-white shadow-2xl rounded-[1.25rem] flex items-center justify-center text-navy text-2xl border border-slate-200">
+<i class="fas fa-phone-alt"></i>
+</div>
+<div>
+<p class="text-[11px] text-slate-500 font-black uppercase tracking-[0.2em] mb-2">Teléfono Directo</p>
+<h4 class="text-xl font-black text-navy">+593 987189520</h4>
+</div>
+</div>
+<div class="flex items-center space-x-8">
+<div class="w-16 h-16 bg-white shadow-2xl rounded-[1.25rem] flex items-center justify-center text-navy text-2xl border border-slate-200">
+<i class="fas fa-envelope"></i>
+</div>
+<div>
+<p class="text-[11px] text-slate-500 font-black uppercase tracking-[0.2em] mb-2">E-mail Corporativo</p>
+<h4 class="text-xl font-black text-navy">info@aiproconstrucciones.com</h4>
+</div>
+</div>
+<div class="flex items-center space-x-8">
+<div class="w-16 h-16 bg-white shadow-2xl rounded-[1.25rem] flex items-center justify-center text-navy text-2xl border border-slate-200">
+<i class="fas fa-map-marker-alt"></i>
+</div>
+<div>
+<p class="text-[11px] text-slate-500 font-black uppercase tracking-[0.2em] mb-2">Sede Principal</p>
+<h4 class="text-xl font-black text-navy">Torre Empresarial #45, Quito</h4>
+</div>
+</div>
+</div>
+<div class="mt-20 h-80 w-full bg-navy rounded-[3rem] overflow-hidden border border-navy/10 relative grayscale shadow-inner">
+<img alt="Map background" class="w-full h-full object-cover opacity-20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTZMzt1Wudgcf3aXbfy_4e8xMoKm5cEY3Q9liX3mydZEy1uRLoJ4gSsLbWWAQVMB9kp1Z3gCji4qbod2AljkeIIf_wrUOZrGxz3AjM9eIvDlbbPOfZF19nQl4MNiZl4_Wpdx2j9CsPfwGKJ3ys_SKXvmJjEIfcdfysPUIKlPNMh0hiJ9FKqSveKpNFA38sVqwRK3_NpMCqk3fh2KTykzPiZa9r-AAG9teJGF8w8UcRO8zBW8V9q9VZ6RJPMTnM1jHjMCu1DXGRkW1h"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-navy text-white px-8 py-3 rounded-full font-black text-[10px] uppercase tracking-widest shadow-2xl">Ubicación Estratégica</div>
+</div>
+</div>
+</div>
+<div class="bg-white p-12 md:p-16 rounded-[4rem] shadow-[0_50px_100px_-20px_rgba(15,23,42,0.1)] reveal border border-slate-100">
+<h3 class="text-3xl font-black text-navy mb-10 uppercase tracking-tight">Iniciar Consulta</h3>
+<form class="space-y-8">
+<div class="grid md:grid-cols-2 gap-10">
+<div class="space-y-3">
+<label class="block text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">Nombre</label>
+<input class="w-full border-b-2 border-slate-200 focus:border-navy bg-transparent py-4 transition-all outline-none text-navy" placeholder="Su nombre" type="text"/>
+</div>
+<div class="space-y-3">
+<label class="block text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">Teléfono</label>
+<input class="w-full border-b-2 border-slate-200 focus:border-navy bg-transparent py-4 transition-all outline-none text-navy" placeholder="Su móvil" type="tel"/>
+</div>
+</div>
+<div class="space-y-3">
+<label class="block text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">Email Profesional</label>
+<input class="w-full border-b-2 border-slate-200 focus:border-navy bg-transparent py-4 transition-all outline-none text-navy" placeholder="email@empresa.com" type="email"/>
+</div>
+<div class="space-y-3">
+<label class="block text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">Su Visión</label>
+<textarea class="w-full border-b-2 border-slate-200 focus:border-navy bg-transparent py-4 transition-all outline-none text-navy" placeholder="Describa brevemente su proyecto..." rows="4"></textarea>
+</div>
+<button class="w-full py-6 bg-navy text-white font-black rounded-3xl hover:bg-bronze transition-all duration-500 uppercase tracking-[0.3em] text-[11px] mt-8" type="submit">Enviar Mensaje Ahora</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ContactSection -->
+<!-- BEGIN: CTAFooter -->
+<section class="py-24 bg-navy relative overflow-hidden">
+<div class="absolute inset-0">
+<img alt="Modern infrastructure abstract" class="w-full h-full object-cover opacity-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAK95Lq43ThemLr9kBQxgUWhuMiL_-sg_OyySqG8IzE4ogjz4nb5K6SoBX5FrxygnvdDYzwUjvI5wfv5Qd2alIHOVi-sLjQxkwn1Ka2NoLMcK0qsZTUDQIE2VsnFPqzBMRNvQpwaDFnBzn7BHDmwW2MigMilJgpGuASiJxBp4oj0rthgUmNbiF8-3j-ROP9MsOQjAQkD6gAjei2rn4l7zweHYtzLUjAk3ohOLGwrnFv4GcR0rMPlhfLPWKYVvYYfa122BjV5mwK6-J"/>
+</div>
+<div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="text-white text-center md:text-left max-w-xl">
+<h2 class="text-4xl md:text-5xl font-black mb-6 tracking-tight leading-tight">Construyamos el futuro juntos.</h2>
+<p class="text-slate-300 text-lg font-light opacity-80">Transformamos visiones audaces en hitos estructurales inquebrantables.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-6 w-full md:w-auto">
+<a class="px-14 py-6 bg-white text-navy font-black rounded-full hover:bg-slate-100 hover:scale-105 transition-all text-center uppercase tracking-[0.2em] text-[11px] shadow-2xl" href="#cotizacion-gratis">Solicitar Cotización</a>
+<a class="px-14 py-6 bg-navy-light border border-white/20 text-white font-black rounded-full hover:bg-white hover:text-navy transition-all text-center flex items-center justify-center uppercase tracking-[0.2em] text-[11px] shadow-2xl" href="https://wa.me/593987189520?text=Hola,%20estoy%20interesado%20en%20los%20servicios%20de%20AI%20PRO%20Construcciones,%20me%20gustaría%20recibir%20información.">
+<i class="fab fa-whatsapp mr-3 text-2xl"></i> Contacto VIP
+            </a>
+</div>
+</div>
+</section>
+<!-- END: CTAFooter -->
+<!-- BEGIN: FloatingButtons -->
+<a aria-label="Contactar por WhatsApp" class="fixed bottom-12 right-12 w-20 h-20 bg-green-500 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all z-[100] animate-float" href="https://wa.me/593987189520?text=Hola,%20estoy%20interesado%20en%20los%20servicios%20de%20AI%20PRO%20Construcciones,%20me%20gustaría%20recibir%20información." target="_blank">
+<i class="fab fa-whatsapp text-4xl"></i>
+</a>
+<!-- END: FloatingButtons -->
+<!-- BEGIN: Footer -->
+<footer class="bg-navy text-white pt-32 pb-16 border-t border-white/5">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 mb-24">
+<div class="col-span-1 md:col-span-2 lg:col-span-1">
+<div class="flex items-center space-x-4 mb-10">
+<div class="w-10 h-10 bg-white flex items-center justify-center rounded-xl shadow-lg transform rotate-6">
+<span class="text-navy font-black text-xl">AI</span>
+</div>
+<span class="font-black text-2xl uppercase tracking-tighter">PRO <span class="font-light text-bronze">Construcciones</span></span>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed mb-10 font-light max-w-sm">
+                    Líderes regionales en ingeniería civil y arquitectura de lujo. Redefiniendo los estándares de construcción con precisión técnica y compromiso sostenible.
+                </p>
+<div class="flex space-x-6">
+<a class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-white hover:text-navy hover:-translate-y-1 transition-all duration-500 border border-white/5" href="#"><i class="fab fa-facebook-f"></i></a>
+<a class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-white hover:text-navy hover:-translate-y-1 transition-all duration-500 border border-white/5" href="#"><i class="fab fa-instagram"></i></a>
+<a class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-white hover:text-navy hover:-translate-y-1 transition-all duration-500 border border-white/5" href="#"><i class="fab fa-linkedin-in"></i></a>
+</div>
+</div>
+<div>
+<h4 class="font-black text-[11px] uppercase tracking-[0.3em] mb-10 text-bronze">Servicios</h4>
+<ul class="space-y-5 text-slate-400 text-[13px] font-medium tracking-wide">
+<li><a class="hover:text-white transition-colors" href="#">Ingeniería Civil</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Arquitectura Premium</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Construcción de Lujo</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Estudios de Suelo</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Diseño Estructural</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-black text-[11px] uppercase tracking-[0.3em] mb-10 text-bronze">Navegación</h4>
+<ul class="space-y-5 text-slate-400 text-[13px] font-medium tracking-wide">
+<li><a class="hover:text-white transition-colors" href="#home">Inicio</a></li>
+<li><a class="hover:text-white transition-colors" href="#nosotros">Nosotros</a></li>
+<li><a class="hover:text-white transition-colors" href="#servicios">Servicios</a></li>
+<li><a class="hover:text-white transition-colors" href="#proyectos">Proyectos</a></li>
+<li><a class="hover:text-white transition-colors" href="#contacto">Contacto</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-black text-[11px] uppercase tracking-[0.3em] mb-10 text-bronze">Contacto &amp; Legal</h4>
+<ul class="space-y-5 text-slate-400 text-[13px] font-medium tracking-wide">
+<li class="flex items-center space-x-3"><i class="fas fa-phone-alt text-bronze"></i> <span>+593 987189520</span></li>
+<li><a class="hover:text-white transition-colors" href="#">Políticas de Privacidad</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Términos y Condiciones</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Certificaciones ISO</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-slate-500 text-[11px] font-medium uppercase tracking-widest">© 2024 AI PRO Construcciones. Todos los derechos reservados.</p>
+<p class="text-bronze text-[11px] font-black uppercase tracking-widest">Luxury Engineering Excellence</p>
+</div>
+</div>
+</footer>
+<script>
+    // Reveal animation observer
+    const observerOptions = {
+        threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>
+</body></html>
